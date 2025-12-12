@@ -160,16 +160,6 @@ API → CoinMarketCap → PostgreSQL → Python Analysis
 
 ---
 
-## 📈 GitHub Stats
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=radical)
-
-</div>
-
----
-
 ## 🎯 What I'm Currently Working On
 
 - 📚 Pursuing MPA in Data Science for Public Policy at LSE
