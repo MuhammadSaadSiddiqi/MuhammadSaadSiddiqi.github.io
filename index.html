@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Muhammad Saad Siddique - Data Scientist, Public Policy Analyst, and Social Entrepreneur">
     <title>Muhammad Saad Siddique | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,9 +16,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-            overflow-x: hidden;
+            color: #e2e8f0;
+            background: #0f172a;
         }
 
         /* Navigation */
@@ -25,17 +25,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 1.2rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
             z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            padding: 0.7rem 0;
-            box-shadow: 0 2px 30px rgba(0,0,0,0.12);
+            border-bottom: 1px solid #1e293b;
         }
 
         nav .container {
@@ -49,11 +44,8 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 700;
+            color: #64ffda;
         }
 
         nav ul {
@@ -64,44 +56,14 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #94a3b8;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
         }
 
         nav a:hover {
-            color: #667eea;
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: all 0.3s;
+            color: #64ffda;
         }
 
         /* Hero Section */
@@ -110,309 +72,269 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-            animation: float 20s linear infinite;
-        }
-
-        @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-100px); }
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
+            max-width: 800px;
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
             font-weight: 700;
+            color: #e2e8f0;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 .highlight {
+            color: #64ffda;
         }
 
         .hero-content .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s backwards;
-            font-weight: 300;
-        }
-
-        .hero-content .tagline {
-            font-size: 1.2rem;
-            opacity: 0.85;
-            animation: fadeInUp 1s ease 0.4s backwards;
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+            font-weight: 400;
         }
 
         .social-links {
-            margin-top: 2.5rem;
             display: flex;
             gap: 1.5rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease 0.6s backwards;
-            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .social-links a {
-            color: white;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 30px;
+            color: #94a3b8;
+            font-size: 1.5rem;
             transition: all 0.3s;
-            font-weight: 500;
         }
 
         .social-links a:hover {
-            background: white;
-            color: #667eea;
+            color: #64ffda;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: #64ffda;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 2px solid #64ffda;
+        }
+
+        .cta-button:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-2px);
         }
 
         /* Section Styles */
         section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
         }
 
         h2 {
-            font-size: 3rem;
-            margin-bottom: 3.5rem;
-            text-align: center;
-            color: #333;
-            position: relative;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #e2e8f0;
             font-weight: 700;
         }
 
-        h2::after {
+        h2::before {
             content: '';
-            display: block;
-            width: 80px;
-            height: 5px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 1.5rem auto;
-            border-radius: 3px;
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            background: #64ffda;
+            margin-right: 1rem;
+            vertical-align: middle;
         }
 
         /* About Section */
         #about {
-            background: white;
+            background: #1e293b;
         }
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
             align-items: start;
         }
 
-        .about-text {
-            background: #f8f9fa;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #64ffda 0%, #0ea5e9 100%);
+            border-radius: 12px;
+            opacity: 0.8;
         }
 
         .about-text p {
             margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #94a3b8;
         }
 
         .about-text strong {
-            color: #667eea;
-            font-weight: 600;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s;
-            color: white;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.95;
+            color: #64ffda;
         }
 
         /* Experience Section */
-        .experience-grid {
+        .experience-container {
             display: grid;
-            gap: 2.5rem;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
         }
 
-        .experience-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-left: 5px solid #667eea;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
-            transition: left 0.5s;
-        }
-
-        .experience-card:hover::before {
-            left: 100%;
-        }
-
-        .experience-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-        }
-
-        .experience-header {
+        .experience-tabs {
             display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 0;
+            border-left: 2px solid #334155;
         }
 
-        .experience-title {
+        .experience-tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            transition: all 0.3s;
+            border-left: 2px solid transparent;
+            margin-left: -2px;
+            font-family: inherit;
+        }
+
+        .experience-tab:hover {
+            background: #1e293b;
+            color: #e2e8f0;
+        }
+
+        .experience-tab.active {
+            color: #64ffda;
+            background: #1e293b;
+            border-left-color: #64ffda;
+        }
+
+        .experience-content {
+            min-height: 300px;
+        }
+
+        .experience-panel {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .experience-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .experience-header h3 {
             font-size: 1.5rem;
-            color: #667eea;
-            font-weight: 700;
+            color: #e2e8f0;
             margin-bottom: 0.3rem;
         }
 
-        .experience-company {
-            font-size: 1.15rem;
-            color: #666;
-            font-weight: 500;
+        .experience-header .company {
+            color: #64ffda;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        .experience-date {
-            color: #999;
-            font-size: 0.95rem;
-            white-space: nowrap;
+        .experience-header .company:hover {
+            color: #0ea5e9;
         }
 
-        .experience-highlights {
+        .experience-header .date {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-list {
             list-style: none;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .experience-highlights li {
-            padding-left: 2rem;
+        .experience-list li {
+            padding-left: 1.5rem;
             position: relative;
             margin-bottom: 1rem;
-            color: #555;
+            color: #94a3b8;
             line-height: 1.7;
         }
 
-        .experience-highlights li::before {
+        .experience-list li::before {
             content: '▹';
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: #64ffda;
             font-weight: bold;
-            font-size: 1.3rem;
         }
 
         /* Projects Section */
         #projects {
-            background: white;
+            background: #1e293b;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: #0f172a;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.4s;
-            position: relative;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s;
+            border: 1px solid #334155;
         }
 
         .project-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            border-color: #64ffda;
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+            border-bottom: 2px solid #64ffda;
         }
 
         .project-content {
-            padding: 2.5rem;
+            padding: 2rem;
         }
 
         .project-title {
-            font-size: 1.4rem;
-            color: #333;
+            font-size: 1.3rem;
+            color: #e2e8f0;
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .project-description {
-            color: #666;
+            color: #94a3b8;
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
@@ -420,44 +342,31 @@
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.7rem;
+            gap: 0.5rem;
         }
 
         .tag {
-            background: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
+            background: transparent;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
             font-size: 0.85rem;
-            color: #667eea;
+            color: #64ffda;
             font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #64ffda;
         }
 
         /* Skills Section */
-        .skills-container {
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            gap: 2rem;
         }
 
         .skill-category h3 {
-            color: #667eea;
-            margin-bottom: 1.8rem;
-            font-size: 1.4rem;
-            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .skill-list {
@@ -467,41 +376,33 @@
         }
 
         .skill-item {
-            background: #f8f9fa;
-            padding: 0.6rem 1.2rem;
-            border-radius: 25px;
-            font-size: 0.95rem;
+            background: #1e293b;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            border: 1px solid #334155;
             transition: all 0.3s;
-            cursor: default;
-            border: 2px solid transparent;
         }
 
         .skill-item:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            transform: scale(1.08);
-            border-color: #667eea;
+            color: #64ffda;
+            border-color: #64ffda;
         }
 
         /* Contact Section */
         #contact {
-            background: white;
-        }
-
-        .contact-content {
+            background: #1e293b;
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 4rem 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
-            color: white;
         }
 
         .contact-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            line-height: 1.8;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-buttons {
@@ -512,154 +413,84 @@
         }
 
         .contact-btn {
-            padding: 1.2rem 2.5rem;
-            background: white;
-            color: #667eea;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: #64ffda;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 6px;
             transition: all 0.3s;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 500;
+            border: 2px solid #64ffda;
         }
 
         .contact-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: #f8f9fa;
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: #2d3748;
-            color: white;
+            background: #020617;
+            color: #64748b;
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem;
+            border-top: 1px solid #1e293b;
         }
 
-        footer p {
-            margin: 0.5rem 0;
-            opacity: 0.9;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 968px) {
             .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .hero-content .subtitle {
-                font-size: 1.4rem;
+                font-size: 2.5rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
             }
 
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .stats {
+            .experience-container {
                 grid-template-columns: 1fr;
             }
 
+            .experience-tabs {
+                flex-direction: row;
+                border-left: none;
+                border-bottom: 2px solid #334155;
+                overflow-x: auto;
+            }
+
+            .experience-tab {
+                border-left: none;
+                border-bottom: 2px solid transparent;
+                margin-left: 0;
+                margin-bottom: -2px;
+                white-space: nowrap;
+            }
+
+            .experience-tab.active {
+                border-left: none;
+                border-bottom-color: #64ffda;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
             h2 {
-                font-size: 2.2rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
+                font-size: 2rem;
             }
         }
 
-        @media (max-width: 640px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-content .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-content .tagline {
-                font-size: 1rem;
-            }
-
-            .social-links a {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .experience-header {
-                flex-direction: column;
-            }
-
-            .contact-content {
-                padding: 3rem 2rem;
-            }
-
-            .contact-btn {
-                padding: 1rem 2rem;
-            }
-        }
-
-        /* Scroll behavior */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Loading animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav>
         <div class="container">
             <div class="logo">MSS</div>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="navMenu">
+            <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -673,14 +504,15 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Muhammad Saad Siddique</h1>
-            <p class="subtitle">Data Scientist | Public Policy Analyst | Social Entrepreneur</p>
-            <p class="tagline">Transforming data into decisions, research into impact, and opportunities into change</p>
+            <h1>Hi, I'm Saad,<br>a <span class="highlight">data scientist.</span></h1>
+            <p class="subtitle">Transforming data into decisions, research into impact, and opportunities into change</p>
             <div class="social-links">
-                <a href="mailto:Saadsiddique664@gmail.com">Email</a>
-                <a href="https://linkedin.com/in/msaadsiddique/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="tel:+447442715127">Call Me</a>
+                <a href="https://linkedin.com/in/msaadsiddique/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/MuhammadSaadSiddiqi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:Saadsiddique664@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+447442715127" aria-label="Phone"><i class="fas fa-phone"></i></a>
             </div>
+            <a href="#about" class="cta-button">Learn More</a>
         </div>
     </section>
 
@@ -688,83 +520,83 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="about-content">
+            <div class="about-image"></div>
             <div class="about-text">
-                <p>I'm currently pursuing an MPA in Data Science for Public Policy at the <strong>London School of Economics</strong> as a David and Duncan Clark Scholar, one of only 2 recipients from Asia.</p>
-                <p>With a background in Economics and Mathematics from LUMS Pakistan, I've spent the last few years working at the intersection of data science, policy research, and international development.</p>
-                <p>I'm passionate about leveraging data-driven insights to solve complex policy challenges and create social impact. My work spans from consulting with <strong>USAID</strong> on Pakistan-US trade to researching gender discrimination in online marketplaces.</p>
-                <p>I'm also the founder of <strong>PeerPathway</strong>, a social enterprise connecting students with mentors for graduate studies guidance.</p>
-            </div>
-            <div class="stats">
-                <div class="stat-card fade-in">
-                    <span class="stat-number">4+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-card fade-in">
-                    <span class="stat-number">6+</span>
-                    <span class="stat-label">Major Projects</span>
-                </div>
-                <div class="stat-card fade-in">
-                    <span class="stat-number">100K+</span>
-                    <span class="stat-label">Data Points Analyzed</span>
-                </div>
-                <div class="stat-card fade-in">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label">Mentors Onboarded</span>
-                </div>
+                <p>Hi, I'm Saad! I'm currently pursuing an MPA in Data Science for Public Policy at the <strong>London School of Economics</strong>, where I was awarded the David and Duncan Clark Scholarship—one of only two recipients from Asia.</p>
+                <p>I studied Economics and Mathematics at LUMS, and I'm currently working at the intersection of <strong>data science, policy research, and international development</strong>. I have hands-on experience building scalable analytics solutions and conducting rigorous research.</p>
+                <p>I'm proficient in using multiple tools and technologies, including Python, SQL, and Power BI. I place focus on <strong>getting things done right</strong> with data-driven insights.</p>
+                <p>I'm also the founder of <strong>PeerPathway</strong>, a social enterprise connecting students with mentors from top universities worldwide.</p>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="experience-grid">
-            <div class="experience-card fade-in">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Senior Business Analyst</div>
-                        <div class="experience-company">Power Technology Research</div>
-                    </div>
-                    <div class="experience-date">June 2022 - Aug 2025</div>
-                </div>
-                <ul class="experience-highlights">
-                    <li>Led 4 consulting projects with constant client interaction, delivering PowerPoints with qualitative and quantitative insights</li>
-                    <li>Designed 3 Excel-based market sizing and forecasting models for electric vehicle demand globally, utilizing 100,000+ data points</li>
-                    <li>Led team to develop research automation tool using SERP API and OpenAI API, reducing secondary research time by 50%</li>
-                    <li>Created LinkedIn API tool to track company and employee data, increasing revenue by 20%</li>
-                </ul>
+        <h2>Experience</h2>
+        <div class="experience-container">
+            <div class="experience-tabs">
+                <button class="experience-tab active" data-tab="tab1">Power Technology<br>Research</button>
+                <button class="experience-tab" data-tab="tab2">USAID - Export<br>Strategy</button>
+                <button class="experience-tab" data-tab="tab3">USAID - Stepwise<br>Guide</button>
+                <button class="experience-tab" data-tab="tab4">Research<br>Assistant</button>
             </div>
-
-            <div class="experience-card fade-in">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Research Associate - Consultant</div>
-                        <div class="experience-company">USAID Investment Promotion Activity</div>
+            <div class="experience-content">
+                <div class="experience-panel active" id="tab1">
+                    <div class="experience-header">
+                        <h3>Senior Business Analyst @ <a href="#" class="company">Power Technology Research</a></h3>
+                        <p class="date">June 2022 - August 2025</p>
                     </div>
-                    <div class="experience-date">Dec 2023 - June 2024</div>
+                    <ul class="experience-list">
+                        <li>Led 4 consulting projects with constant client interaction, delivering PowerPoints with qualitative and quantitative insights</li>
+                        <li>Designed 3 Excel-based market sizing and forecasting models for electric vehicle demand globally, utilizing 100,000+ data points</li>
+                        <li>Led team to develop research automation tool using SERP API and OpenAI API, reducing secondary research time by 50%</li>
+                        <li>Created LinkedIn API tool to track company and employee data, increasing revenue by 20%</li>
+                        <li>Trained and managed teams in data analysis and market research to develop data-oriented recommendations for clients</li>
+                    </ul>
                 </div>
-                <ul class="experience-highlights">
-                    <li>Devised first-of-its-kind stepwise process guide for traders to promote Pakistan-US trade</li>
-                    <li>Consulted with government stakeholders including Pakistan Business Council, TDAP, and SMEDA</li>
-                    <li>Analyzed surgical products with highest export potential in US at HS 8 code level</li>
-                    <li>Delivered data-backed policy brief with industry expert interviews</li>
-                </ul>
-            </div>
 
-            <div class="experience-card fade-in">
-                <div class="experience-header">
-                    <div>
-                        <div class="experience-title">Research Assistant</div>
-                        <div class="experience-company">Gender Discrimination Study - Journal of Development Economics</div>
+                <div class="experience-panel" id="tab2">
+                    <div class="experience-header">
+                        <h3>Research Associate - Consultant @ <a href="#" class="company">USAID Investment Promotion Activity</a></h3>
+                        <p class="date">December 2023 - February 2024</p>
                     </div>
-                    <div class="experience-date">Oct 2022 - Nov 2023</div>
+                    <ul class="experience-list">
+                        <li>Conducted interviews with government stakeholders and industry experts to understand barriers to exports</li>
+                        <li>Analyzed surgical products with highest export potential in US using data from Pakistan Bureau of Statistics and Trade Map at HS 8 code level</li>
+                        <li>Analyzed production capacity and market size of surgical instruments market in Pakistan through on-ground fieldwork</li>
+                        <li>Compiled comprehensive document highlighting strengths, weaknesses, opportunities, and challenges for surgical exports from Pakistan</li>
+                        <li>Delivered policy brief backed by data and interviews from industry experts</li>
+                    </ul>
                 </div>
-                <ul class="experience-highlights">
-                    <li>Compiled database of 30 parameters for gender-based Randomized Control Trial study</li>
-                    <li>Converted 33,000+ Facebook messages from JSON to clean Excel using Python</li>
-                    <li>Analyzed seller verbosity by gender using regression and confidence interval plots</li>
-                    <li>Led team of 36 interns for 3-week survey annotation exercise</li>
-                </ul>
+
+                <div class="experience-panel" id="tab3">
+                    <div class="experience-header">
+                        <h3>Research Associate - Consultant @ <a href="#" class="company">USAID Investment Promotion Activity</a></h3>
+                        <p class="date">February 2024 - June 2024</p>
+                    </div>
+                    <ul class="experience-list">
+                        <li>Devised first-of-its-kind stepwise process guide for traders to trade with US to promote Pakistan-US trade</li>
+                        <li>Performed desk review of available information and consolidated it in a well-structured draft</li>
+                        <li>Consulted with government stakeholders including Pakistan Business Council, TDAP, and SMEDA for review and feedback</li>
+                        <li>Consolidated information regarding trade regulations at product level by identifying products with highest potential</li>
+                    </ul>
+                </div>
+
+                <div class="experience-panel" id="tab4">
+                    <div class="experience-header">
+                        <h3>Research Assistant @ <a href="#" class="company">Gender Discrimination Study</a></h3>
+                        <p class="date">October 2022 - November 2023</p>
+                    </div>
+                    <p style="color: #94a3b8; margin-bottom: 1rem;"><em>Published in Journal of Development Economics</em></p>
+                    <ul class="experience-list">
+                        <li>Compiled and maintained database of 30 parameters for gender-based Randomized Control Trial study</li>
+                        <li>Conducted statistical analysis in Python on collected data, revealing that females paid more than males with no significant difference</li>
+                        <li>Converted raw Facebook conversation JSON data of 33,000+ messages between buyers and sellers into clean Excel file using Python</li>
+                        <li>Analyzed seller verbosity by gender using regression and confidence interval plots, revealing significantly greater talkative nature toward females</li>
+                        <li>Created literature-backed survey to analyze tone of sellers across genders and integrated it with Qualtrics</li>
+                        <li>Hired and led team of 36 interns for 3-week survey annotation exercise, revealing flirtatious tone toward female buyers</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -773,7 +605,8 @@
     <section id="projects">
         <h2>Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card fade-in">
+            <div class="project-card">
+                <div class="project-image"></div>
                 <div class="project-content">
                     <h3 class="project-title">PeerPathway</h3>
                     <p class="project-description">Online one-to-one mentoring platform connecting students with no access to career counseling with mentors from top-tier schools like UChicago, LSE, and Oxford.</p>
@@ -785,38 +618,28 @@
                 </div>
             </div>
 
-            <div class="project-card fade-in">
+            <div class="project-card">
+                <div class="project-image"></div>
                 <div class="project-content">
                     <h3 class="project-title">Impact of Grading System</h3>
                     <p class="project-description">Developed empirical framework to analyze student behavior under relative vs. absolute grading, adapting the Fehr-Schmidt model to capture behavioral shifts.</p>
                     <div class="project-tags">
                         <span class="tag">Behavioral Economics</span>
                         <span class="tag">Research</span>
-                        <span class="tag">Statistical Analysis</span>
+                        <span class="tag">Python</span>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card fade-in">
+            <div class="project-card">
+                <div class="project-image"></div>
                 <div class="project-content">
                     <h3 class="project-title">Bitcoin Market Manipulation</h3>
                     <p class="project-description">Built regression model showing 85% correlation between Bitcoin and altcoins using real-time data from CoinMarketCap API and PostgreSQL database.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">SQL</span>
-                        <span class="tag">Cryptocurrency</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card fade-in">
-                <div class="project-content">
-                    <h3 class="project-title">Export Strategy for Surgical Instruments</h3>
-                    <p class="project-description">Comprehensive analysis of Pakistani surgical instrument exports to US, including production capacity assessment and policy recommendations.</p>
-                    <div class="project-tags">
-                        <span class="tag">USAID</span>
-                        <span class="tag">Trade Policy</span>
-                        <span class="tag">Market Research</span>
+                        <span class="tag">PostgreSQL</span>
                     </div>
                 </div>
             </div>
@@ -826,8 +649,8 @@
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills & Expertise</h2>
-        <div class="skills-container">
-            <div class="skill-category fade-in">
+        <div class="skills-grid">
+            <div class="skill-category">
                 <h3>Programming & Tools</h3>
                 <div class="skill-list">
                     <span class="skill-item">Python</span>
@@ -839,7 +662,7 @@
                 </div>
             </div>
 
-            <div class="skill-category fade-in">
+            <div class="skill-category">
                 <h3>Data Science</h3>
                 <div class="skill-list">
                     <span class="skill-item">Data Analytics</span>
@@ -847,29 +670,26 @@
                     <span class="skill-item">Machine Learning</span>
                     <span class="skill-item">LASSO Regression</span>
                     <span class="skill-item">Statistical Analysis</span>
-                    <span class="skill-item">Data Modeling</span>
                 </div>
             </div>
 
-            <div class="skill-category fade-in">
+            <div class="skill-category">
                 <h3>Research & Analysis</h3>
                 <div class="skill-list">
                     <span class="skill-item">Qualitative Research</span>
                     <span class="skill-item">Quantitative Research</span>
                     <span class="skill-item">Market Research</span>
                     <span class="skill-item">Policy Analysis</span>
-                    <span class="skill-item">Supply-Demand Analysis</span>
                 </div>
             </div>
 
-            <div class="skill-category fade-in">
+            <div class="skill-category">
                 <h3>Soft Skills</h3>
                 <div class="skill-list">
                     <span class="skill-item">Leadership</span>
                     <span class="skill-item">Critical Thinking</span>
                     <span class="skill-item">Client Presentations</span>
                     <span class="skill-item">Team Management</span>
-                    <span class="skill-item">Stakeholder Engagement</span>
                 </div>
             </div>
         </div>
@@ -877,13 +697,11 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Let's Connect</h2>
+        <h2>Contact Me</h2>
         <div class="contact-content">
-            <p>I'm always interested in discussing data-driven policy solutions, international development projects, educational equity initiatives, and consulting opportunities.</p>
+            <p>Whether it's a job opportunity, a collaboration,<br>or feedback on my portfolio, my inbox is open!</p>
             <div class="contact-buttons">
-                <a href="mailto:Saadsiddique664@gmail.com" class="contact-btn">Email Me</a>
-                <a href="https://linkedin.com/in/msaadsiddique/" target="_blank" rel="noopener" class="contact-btn">LinkedIn</a>
-                <a href="tel:+447442715127" class="contact-btn">Call Me</a>
+                <a href="mailto:Saadsiddique664@gmail.com" class="contact-btn">Send Email</a>
             </div>
         </div>
     </section>
@@ -891,26 +709,26 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Muhammad Saad Siddique. All rights reserved.</p>
-        <p>Based in London | Data Scientist & Policy Analyst</p>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
+        // Experience tabs functionality
+        const tabs = document.querySelectorAll('.experience-tab');
+        const panels = document.querySelectorAll('.experience-panel');
 
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.getAttribute('data-tab');
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
             });
         });
 
-        // Smooth scroll for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -922,35 +740,6 @@
                     });
                 }
             });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
