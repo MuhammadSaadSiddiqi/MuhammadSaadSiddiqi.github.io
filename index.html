@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Saad Siddique - Data Scientist, Public Policy Analyst, and Social Entrepreneur">
+    <title>Muhammad Saad Siddique | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.7rem 0;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.12);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            font-weight: 700;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            font-weight: 300;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .social-links {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.6s backwards;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 3.5rem;
+            text-align: center;
+            color: #333;
+            position: relative;
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 1.5rem auto;
+            border-radius: 3px;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .about-text strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            color: white;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .experience-card:hover::before {
+            left: 100%;
+        }
+
+        .experience-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-company {
+            font-size: 1.15rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: #999;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .experience-highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .experience-highlights li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .experience-highlights li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .tag {
+            background: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #667eea;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1.8rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            cursor: default;
+            border: 2px solid transparent;
+        }
+
+        .skill-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.08);
+            border-color: #667eea;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: white;
+        }
+
+        .contact-content {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            color: white;
+        }
+
+        .contact-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 1.2rem 2.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.4rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1rem;
+            }
+
+            .social-links a {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .contact-content {
+                padding: 3rem 2rem;
+            }
+
+            .contact-btn {
+                padding: 1rem 2rem;
+            }
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">MSS</div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Muhammad Saad Siddique</h1>
+            <p class="subtitle">Data Scientist | Public Policy Analyst | Social Entrepreneur</p>
+            <p class="tagline">Transforming data into decisions, research into impact, and opportunities into change</p>
+            <div class="social-links">
+                <a href="mailto:Saadsiddique664@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/msaadsiddique/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="tel:+447442715127">Call Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm currently pursuing an MPA in Data Science for Public Policy at the <strong>London School of Economics</strong> as a David and Duncan Clark Scholar, one of only 2 recipients from Asia.</p>
+                <p>With a background in Economics and Mathematics from LUMS Pakistan, I've spent the last few years working at the intersection of data science, policy research, and international development.</p>
+                <p>I'm passionate about leveraging data-driven insights to solve complex policy challenges and create social impact. My work spans from consulting with <strong>USAID</strong> on Pakistan-US trade to researching gender discrimination in online marketplaces.</p>
+                <p>I'm also the founder of <strong>PeerPathway</strong>, a social enterprise connecting students with mentors for graduate studies guidance.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-card fade-in">
+                    <span class="stat-number">4+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Major Projects</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">100K+</span>
+                    <span class="stat-label">Data Points Analyzed</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Mentors Onboarded</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Senior Business Analyst</div>
+                        <div class="experience-company">Power Technology Research</div>
+                    </div>
+                    <div class="experience-date">June 2022 - Aug 2025</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Led 4 consulting projects with constant client interaction, delivering PowerPoints with qualitative and quantitative insights</li>
+                    <li>Designed 3 Excel-based market sizing and forecasting models for electric vehicle demand globally, utilizing 100,000+ data points</li>
+                    <li>Led team to develop research automation tool using SERP API and OpenAI API, reducing secondary research time by 50%</li>
+                    <li>Created LinkedIn API tool to track company and employee data, increasing revenue by 20%</li>
+                </ul>
+            </div>
+
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Research Associate - Consultant</div>
+                        <div class="experience-company">USAID Investment Promotion Activity</div>
+                    </div>
+                    <div class="experience-date">Dec 2023 - June 2024</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Devised first-of-its-kind stepwise process guide for traders to promote Pakistan-US trade</li>
+                    <li>Consulted with government stakeholders including Pakistan Business Council, TDAP, and SMEDA</li>
+                    <li>Analyzed surgical products with highest export potential in US at HS 8 code level</li>
+                    <li>Delivered data-backed policy brief with industry expert interviews</li>
+                </ul>
+            </div>
+
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Research Assistant</div>
+                        <div class="experience-company">Gender Discrimination Study - Journal of Development Economics</div>
+                    </div>
+                    <div class="experience-date">Oct 2022 - Nov 2023</div>
+                </div>
+                <ul class="experience-highlights">
+                    <li>Compiled database of 30 parameters for gender-based Randomized Control Trial study</li>
+                    <li>Converted 33,000+ Facebook messages from JSON to clean Excel using Python</li>
+                    <li>Analyzed seller verbosity by gender using regression and confidence interval plots</li>
+                    <li>Led team of 36 interns for 3-week survey annotation exercise</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-content">
+                    <h3 class="project-title">PeerPathway</h3>
+                    <p class="project-description">Online one-to-one mentoring platform connecting students with no access to career counseling with mentors from top-tier schools like UChicago, LSE, and Oxford.</p>
+                    <div class="project-tags">
+                        <span class="tag">Social Enterprise</span>
+                        <span class="tag">EdTech</span>
+                        <span class="tag">Mentoring</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-content">
+                    <h3 class="project-title">Impact of Grading System</h3>
+                    <p class="project-description">Developed empirical framework to analyze student behavior under relative vs. absolute grading, adapting the Fehr-Schmidt model to capture behavioral shifts.</p>
+                    <div class="project-tags">
+                        <span class="tag">Behavioral Economics</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Statistical Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-content">
+                    <h3 class="project-title">Bitcoin Market Manipulation</h3>
+                    <p class="project-description">Built regression model showing 85% correlation between Bitcoin and altcoins using real-time data from CoinMarketCap API and PostgreSQL database.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Cryptocurrency</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-content">
+                    <h3 class="project-title">Export Strategy for Surgical Instruments</h3>
+                    <p class="project-description">Comprehensive analysis of Pakistani surgical instrument exports to US, including production capacity assessment and policy recommendations.</p>
+                    <div class="project-tags">
+                        <span class="tag">USAID</span>
+                        <span class="tag">Trade Policy</span>
+                        <span class="tag">Market Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-category fade-in">
+                <h3>Programming & Tools</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">MS Excel</span>
+                    <span class="skill-item">Power BI</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>Data Science</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Data Analytics</span>
+                    <span class="skill-item">Data Visualization</span>
+                    <span class="skill-item">Machine Learning</span>
+                    <span class="skill-item">LASSO Regression</span>
+                    <span class="skill-item">Statistical Analysis</span>
+                    <span class="skill-item">Data Modeling</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>Research & Analysis</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Qualitative Research</span>
+                    <span class="skill-item">Quantitative Research</span>
+                    <span class="skill-item">Market Research</span>
+                    <span class="skill-item">Policy Analysis</span>
+                    <span class="skill-item">Supply-Demand Analysis</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>Soft Skills</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Leadership</span>
+                    <span class="skill-item">Critical Thinking</span>
+                    <span class="skill-item">Client Presentations</span>
+                    <span class="skill-item">Team Management</span>
+                    <span class="skill-item">Stakeholder Engagement</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <div class="contact-content">
+            <p>I'm always interested in discussing data-driven policy solutions, international development projects, educational equity initiatives, and consulting opportunities.</p>
+            <div class="contact-buttons">
+                <a href="mailto:Saadsiddique664@gmail.com" class="contact-btn">Email Me</a>
+                <a href="https://linkedin.com/in/msaadsiddique/" target="_blank" rel="noopener" class="contact-btn">LinkedIn</a>
+                <a href="tel:+447442715127" class="contact-btn">Call Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Muhammad Saad Siddique. All rights reserved.</p>
+        <p>Based in London | Data Scientist & Policy Analyst</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
