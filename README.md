@@ -16,4 +16,4 @@ asdfasdas
 ## My Plot
 
 A plot I made:
-![Figure of a plot I made!](Figure/Plot.jpg)
+![Figure off a plot I made!](Figure/Plot.jpg)
