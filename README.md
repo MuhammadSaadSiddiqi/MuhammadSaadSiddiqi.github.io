@@ -5,7 +5,7 @@ A demo new repository
 
 ## Subheading
 
-This is section 2. I want to update the github with new stuff
+This is section 2. I want to update the github wgitith new stuff
 
 I want a bulleted list
 
@@ -16,4 +16,4 @@ asdfasdas
 ## My Plot
 
 A plot I made:
-![Figure off a plot I made!](Figure/Plot.jpg)
+![Figure off a plot I maaaAAAde!](Figure/Plot.jpg)
