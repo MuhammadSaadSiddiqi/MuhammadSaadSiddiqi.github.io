@@ -12,3 +12,8 @@ I want a bulleted list
 * item 1
 * item 2
 asdfasdas
+
+## My Plot
+
+A plot I made:
+![Figure of a plot I made](Figure/Plot.jpg)
