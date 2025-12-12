@@ -176,7 +176,16 @@
             aspect-ratio: 1;
             background: linear-gradient(135deg, #64ffda 0%, #0ea5e9 100%);
             border-radius: 12px;
-            opacity: 0.8;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .about-text p {
@@ -307,12 +316,19 @@
             overflow: hidden;
             transition: all 0.3s;
             border: 1px solid #334155;
+            cursor: pointer;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
             border-color: #64ffda;
             box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .project-image {
@@ -520,7 +536,9 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <div class="about-image"></div>
+            <div class="about-image">
+                <img src="picture/picture.jpg" alt="Muhammad Saad Siddique">
+            </div>
             <div class="about-text">
                 <p>Hi, I'm Saad! I'm currently pursuing an MPA in Data Science for Public Policy at the <strong>London School of Economics</strong>, where I was awarded the David and Duncan Clark Scholarship—one of only two recipients from Asia.</p>
                 <p>I studied Economics and Mathematics at LUMS, and I'm currently working at the intersection of <strong>data science, policy research, and international development</strong>. I have hands-on experience building scalable analytics solutions and conducting rigorous research.</p>
@@ -584,7 +602,7 @@
 
                 <div class="experience-panel" id="tab4">
                     <div class="experience-header">
-                        <h3>Research Assistant @ <a href="#" class="company">Gender Discrimination Study</a></h3>
+                        <h3>Research Assistant @ <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4921130" target="_blank" class="company">Gender Discrimination Study</a></h3>
                         <p class="date">October 2022 - November 2023</p>
                     </div>
                     <p style="color: #94a3b8; margin-bottom: 1rem;"><em>Published in Journal of Development Economics</em></p>
@@ -606,42 +624,48 @@
         <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <h3 class="project-title">PeerPathway</h3>
-                    <p class="project-description">Online one-to-one mentoring platform connecting students with no access to career counseling with mentors from top-tier schools like UChicago, LSE, and Oxford.</p>
-                    <div class="project-tags">
-                        <span class="tag">Social Enterprise</span>
-                        <span class="tag">EdTech</span>
-                        <span class="tag">Mentoring</span>
+                <a href="https://peerpathway.org" target="_blank">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">PeerPathway</h3>
+                        <p class="project-description">Online one-to-one mentoring platform connecting students with no access to career counseling with mentors from top-tier schools like UChicago, LSE, and Oxford.</p>
+                        <div class="project-tags">
+                            <span class="tag">Social Enterprise</span>
+                            <span class="tag">EdTech</span>
+                            <span class="tag">Mentoring</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="project-card">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <h3 class="project-title">Impact of Grading System</h3>
-                    <p class="project-description">Developed empirical framework to analyze student behavior under relative vs. absolute grading, adapting the Fehr-Schmidt model to capture behavioral shifts.</p>
-                    <div class="project-tags">
-                        <span class="tag">Behavioral Economics</span>
-                        <span class="tag">Research</span>
-                        <span class="tag">Python</span>
+                <a href="https://docs.google.com/document/d/1rcTpP8f4s6oZgUQGs3-KGR7jPZ5QLQmg/edit?tab=t.0" target="_blank">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Impact of Grading System</h3>
+                        <p class="project-description">Developed empirical framework to analyze student behavior under relative vs. absolute grading, adapting the Fehr-Schmidt model to capture behavioral shifts.</p>
+                        <div class="project-tags">
+                            <span class="tag">Behavioral Economics</span>
+                            <span class="tag">Research</span>
+                            <span class="tag">Python</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="project-card">
-                <div class="project-image"></div>
-                <div class="project-content">
-                    <h3 class="project-title">Bitcoin Market Manipulation</h3>
-                    <p class="project-description">Built regression model showing 85% correlation between Bitcoin and altcoins using real-time data from CoinMarketCap API and PostgreSQL database.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">PostgreSQL</span>
+                <a href="https://colab.research.google.com/drive/1wHJmFE8xXKCZ_WIe4sbYpYEaRca0p3UD?usp=sharing#scrollTo=Vr1hbH8itvbM" target="_blank">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bitcoin Market Manipulation</h3>
+                        <p class="project-description">Built regression model showing 85% correlation between Bitcoin and altcoins using real-time data from CoinMarketCap API and PostgreSQL database.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
