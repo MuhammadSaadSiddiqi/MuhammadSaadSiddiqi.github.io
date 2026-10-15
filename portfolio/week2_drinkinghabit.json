@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Percentage of population drinking in the UK",
+    "subtitle": ["Source: NHS", ""],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "width": 300,
+  "height": 300,
+
+  "mark": {
+    "type": "line",
+    "strokeWidth": 2,
+    "opacity": 1
+  },
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/MuhammadSaadSiddiqi/MuhammadSaadSiddiqi.github.io/refs/heads/main/portfolio/week2/DrinkingHabits.csv",
+    "format": {"type": "csv", "parse": {"Year": "date:'%Y'"}}
+  },
+
+  "transform": [
+    {
+      "fold": ["Percentage men drinking", "Percentage women drinking"],
+      "as": ["Group", "Value"]
+    },
+    {"calculate": "datum.Value / 100", "as": "valueToUse"},
+    {"calculate": "datum.Group == 'Percentage men drinking' ? 'Men' : 'Women'", "as": "Sex"}
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "valueToUse",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [0, 1]},
+      "axis": {"format": "%", "grid": false}
+    },
+    "color": {
+      "field": "Sex",
+      "type": "nominal",
+      "title": null,
+      "scale": {"range": ["darkturquoise", "darkorange"]},
+      "legend": {"orient": "top-left"}
+    }
+  }
+}
